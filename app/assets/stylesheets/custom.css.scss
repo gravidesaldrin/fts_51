@@ -1,0 +1,43 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-inverse {
+  background-color: #DA0909;
+  border: 0;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: #F51313;
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus {
+  background-color: #F51313;
+  color: #fff;
+}
+
+a {
+  color: #DA0909;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: green;
+  text-decoration: underline;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color: white;
+  text-decoration: none;
+  background-color: #F51313;
+}
