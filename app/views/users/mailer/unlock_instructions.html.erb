@@ -1,0 +1,9 @@
+<p><%= t ".greeting" %> <%= @resource.email %>!</p>
+<p><%= t ".message" %></p>
+<p><%= t ".info" %></p>
+<p>
+  <div class="form-group actions">
+    <%= link_to t(".save"), unlock_url(@resource, unlock_token: @token),
+      class: "btn btn-primary" %>
+  </div>
+</p>
