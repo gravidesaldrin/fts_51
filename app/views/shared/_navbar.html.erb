@@ -13,18 +13,34 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "#" do %>
-            <i class="glyphicon glyphicon-user"></i>
-            <%= t ".guest" %>
+
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "#" do %>
+                <i class="glyphicon glyphicon-user"></i>
+                <%= current_user.name %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: "delete" do %>
+                <i class="glyphicon glyphicon-lock"></i>
+                <%= t ".log_out" %>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "#" do %>
+                <i class="glyphicon glyphicon-user"></i>
+                <%= t ".guest" %>
+              <% end %>
+            </li>
+            <li>
+            <%= link_to new_user_session_path do %>
+              <i class="glyphicon glyphicon-lock"></i>
+              <%= t ".log_in" %>
+            <% end %>
+            </li>
           <% end %>
-        </li>
-        <li>
-          <%= link_to "#" do %>
-            <i class="glyphicon glyphicon-lock"></i>
-            <%= t ".log_in" %>
-          <% end %>
-        </li>
       </ul>
     </div>
   </div>

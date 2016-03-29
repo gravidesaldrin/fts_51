@@ -1,1 +1,5 @@
-<strong> <h1> <%= t ".title" %> </h1> </strong>
+<% if user_signed_in? %>
+  <%= render "dashboard" %>
+<% else %>
+  <strong> <h1> <%= t ".title" %> </h1> </strong>
+<% end %>
