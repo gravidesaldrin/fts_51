@@ -1,0 +1,9 @@
+<p><%= t ".greeting" %> <%= @email %>!</p>
+<p><%= t ".message" %></p>
+<p>
+  <div class="form-group actions">
+    <%= link_to t(".save"),
+      confirmation_url(@resource, confirmation_token: @token),
+      class: "btn btn-primary" %>
+  </div>
+</p>
