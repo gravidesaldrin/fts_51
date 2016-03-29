@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  paginates_per 10
+  ROLE = "Normal Admin"
   has_many :exams
   has_many :active_relationships,  class_name: Relationship.name,
     foreign_key: :follower_id,

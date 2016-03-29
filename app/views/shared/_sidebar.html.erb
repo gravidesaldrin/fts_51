@@ -1,4 +1,22 @@
 <div class="col-sm-3">
+  <% if user_signed_in? %>
+    <%= link_to "#" do %>
+      <strong><i class="glyphicon glyphicon-list">
+      </i> <%= t ".menu"%> </strong>
+    <% end %>
+    <hr>
+    <ul class="nav nav-stacked">
+      <ul class="nav nav-stacked collapse in" id="userMenu">
+        <li class="active">
+          <%= link_to users_path do %>
+            <i class="glyphicon glyphicon-user"></i>
+            <%= t ".all_users" %>
+          <% end %>
+        </li>
+      </ul>
+    </ul>
+    <hr>
+  <% end %>
   <ul class="nav nav-stacked">
     <li> <%= link_to t(".home"), root_path, {title: "Home"} %> </li>
     <li> <%= link_to t(".about"), about_path %> </li>

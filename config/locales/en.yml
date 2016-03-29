@@ -4,6 +4,8 @@ en:
       log_in: "Log In"
       log_out: "Log Out"
       title: "Framgia Test System"
+      my_profile: "My Profile"
+      change_password: "Change Password"
   static_pages:
     about:
       title: "About"
@@ -17,6 +19,8 @@ en:
     confirmations:
       new:
         title: "Resend confirmation instructions"
+    index:
+      title: "Users"
     mailer:
       confirmation_instructions:
         greeting: "Welcome"
@@ -45,6 +49,13 @@ en:
       new:
         save: "Send me reset password instructions"
         title: "Forgot your password?"
+    profile:
+      title: "User profile"
+      email: "Email:"
+      following: "Following:"
+      follower: "Follower:"
+      created: "Created:"
+      update: "Edit Profile"
     registrations:
       new:
         min: "characters minimum"
@@ -74,3 +85,5 @@ en:
     unlocks:
       new:
         title: "Resend unlock instructions"
+    user:
+      view: "View my Profile"
