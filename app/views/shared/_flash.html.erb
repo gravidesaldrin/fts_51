@@ -1,0 +1,12 @@
+<% unless flash.blank? %>
+  <div class="alert">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <% flash.each do |key, value| %>
+      <% unless alert.nil? %>
+        <div class="alert alert-warning"><%= value %></div>
+      <% else %>
+        <div class="alert alert-success"><%= value %></div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

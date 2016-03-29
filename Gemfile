@@ -16,6 +16,8 @@ gem "kaminari"
 gem "carrierwave", "0.10.0"
 gem "mini_magick", "3.8.0"
 gem "fog", "1.36.0"
+gem "devise"
+gem "mailcatcher"
 
 group :development, :test do
   gem "sqlite3", "1.3.9"
