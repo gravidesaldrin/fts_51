@@ -1,0 +1,27 @@
+<%= form_for([:admin, @category], html: {multipart: true}) do |f| %>
+  <div class="form-group">
+  <p>
+    <%= f.label :image %>
+    <%= image_tag @category.image_url(:thumb) if @category.image? %>
+    <br/>
+    <%= f.file_field :image %>
+  </p>
+  </div>
+  <div class="form-group">
+    <% unless @category.image? %>
+      <p>
+        <label>
+          <%= f.check_box :remove_image %>
+          <%= t ".remove_avatar" %>
+        </label>
+      </p>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", autofocus: true %>
+  </div>
+  <div class="form-group actions">
+    <%= f.submit t(".save"), class: "btn btn-primary" %>
+  </div>
+<% end %>

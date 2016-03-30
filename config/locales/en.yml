@@ -1,4 +1,64 @@
 en:
+  admin:
+    warning: "You need to be the Admin to visit this page"
+    categories:
+      create:
+        success: "Category successfully created"
+      update:
+        success: "Category successfully updated"
+      destroy:
+        success: "Category successfully deleted"
+      index:
+        title: "Categories"
+        add: "Add Category"
+      category:
+        confirm: "Are you sure?"
+      new:
+        title: "New Category"
+      edit:
+        title: "Update Category"
+      form:
+        save: "Save"
+        remove_avatar: "Remove Avatar"
+      profile:
+        title: "Category"
+        update: "Update"
+        created: "Created:"
+    shared:
+      navbar:
+        log_in: "Log In"
+        log_out: "Log Out"
+        title: "Framgia Test System - Admin"
+        my_profile: "My Profile"
+        change_password: "Change Password"
+        home: "Home"
+        categories: "Categories"
+      sidebar:
+        all_users: "All Users"
+    users:
+      index:
+        title: "Users"
+        add: "Add User"
+      new:
+        min: "characters minimum"
+        title: "New"
+      user:
+        email: "Email"
+        view: "View Profile"
+        confirm: "Are you sure?"
+      edit:
+        title: "Edit"
+        info: "(leave blank if you don't want to change it)"
+        remove_avatar: "Remove Avatar"
+        save: "Update"
+      profile:
+        title: "User profile"
+        update: "Update"
+        created: "Created:"
+      create:
+        success: "User successfully created"
+      update:
+        success: "User successfully updated"
   shared:
     navbar:
       log_in: "Log In"
@@ -6,6 +66,8 @@ en:
       title: "Framgia Test System"
       my_profile: "My Profile"
       change_password: "Change Password"
+    sidebar:
+      all_users: "All Users"
   static_pages:
     about:
       title: "About"

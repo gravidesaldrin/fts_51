@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-11 lead"><%= t ".title" %></div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-md-4 text-center">
+    <%= image_tag(@category.image_url.nil? ?
+      image_url("logo.png") : @category.image_url(:thumb),
+      size: "120x120", class: "img-circle avatar avatar-original") %>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="only-bottom-margin"><%= @category.name %></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <small class="text-muted"><%= t ".created" %>
+          <%= @category.created_at %></small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+    <%= button_to t(".update"),edit_admin_category_path(@category),
+      class: "btn btn-default pull-right", method: "get" %>
+  </div>
+</div>

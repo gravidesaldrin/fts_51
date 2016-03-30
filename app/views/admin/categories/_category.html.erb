@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-body panel-item">
+    <div class="row">
+      <%= link_to [:admin, category] do %>
+      <div class="col-md-4 text-center">
+        <%= image_tag(category.image_url.nil? ?
+          image_url("no_image.png") : category.image_url(:thumb),
+          size: "120x120", class: "img-square avatar avatar-original") %>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="only-bottom-margin"><%= category.name %></h3>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="col-md-2 text-right">
+        <%= button_to [:admin, category], class: "btn btn-delete pull-right",
+          data: {confirm: t(".confirm")}, method: :delete do %>
+          <em class="glyphicon glyphicon-trash"></em>
+        <% end %>
+        <%= button_to edit_admin_category_path(category),
+          class: "btn btn-edit pull-right", method: "get" do %>
+          <em class="glyphicon glyphicon-edit"></em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

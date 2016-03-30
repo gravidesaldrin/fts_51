@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class = "user_index">
+      <div class="row">
+        <div class="col-md-11 lead"><%= t ".title" %></div>
+          <div class="col-md-1 text-right">
+            <%= button_to t(".add"), new_admin_category_path,
+              class: "btn btn-primary pull-right", method: "get" %>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <%= render @categories %>
+      <div class="col-md-11">
+        <%= paginate @categories %>
+      </div>
+   </div>
+  </div>
+</div>
