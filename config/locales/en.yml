@@ -66,6 +66,7 @@ en:
         cancel_message: "Cancel my account"
         confirm_cancel: "Are you sure?"
         info: "(leave blank if you don't want to change it)"
+        remove_avatar: "Remove Avatar"
         password_info: "(we need your current password to confirm your changes)"
         save: "Update"
         title: "Edit"

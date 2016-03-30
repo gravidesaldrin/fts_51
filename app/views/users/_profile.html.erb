@@ -1,4 +1,13 @@
 <div class="row">
+  <div class="col-md-11 lead"><%= t ".title" %></div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col-md-4 text-center">
+    <%= image_tag(@user.avatar_url.nil? ?
+      image_url("logo.png") : @user.avatar_url(:thumb),
+      size: "120x120", class: "img-circle avatar avatar-original") %>
+  </div>
   <div class="col-md-8">
     <div class="row">
       <div class="col-md-12">

@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  mount_uploader :avatar, AvatarUploader
 end
