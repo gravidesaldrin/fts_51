@@ -1,0 +1,43 @@
+<h2><%= t ".title" %> </h2>
+<%= form_for([:admin, @user], html: {multipart: true}) do |f| %>
+  <div class="form-group">
+  <p>
+    <%= f.label :avatar %>
+    <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+    <br/>
+    <%= f.file_field :avatar %>
+  </p>
+  <p>
+    <label>
+      <%= f.check_box :remove_avatar %>
+      <%= t ".remove_avatar" %>
+    </label>
+  </p>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :role %>
+    <%= f.collection_select(:role, User::ROLE, :to_s,
+      lambda{|i| i.to_s.humanize}, {prompt: true}, {class: "form-control"} ) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %> <i> <%= t ".info" %> </i>
+    <%= f.password_field :password, class: "form-control",
+      autocomplete: "off" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control",
+      autocomplete: "off" %>
+  </div>
+  <div class="form-group actions">
+    <%= f.submit t(".save"), class: "btn btn-primary" %>
+  </div>
+<% end %>

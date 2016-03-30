@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <div class="panel-body panel-item">
+    <div class="row">
+      <%= link_to [:admin, user] do %>
+      <div class="col-md-4 text-center">
+        <%= image_tag(user.avatar_url.nil? ?
+          image_url("logo.png") : user.avatar_url(:thumb),
+          size: "120x120", class: "img-circle avatar avatar-original") %>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="only-bottom-margin"><%= user.name %></h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <span class="text-muted"><%= t ".email" %></span>
+              <%= user.email %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="col-md-2 text-right">
+        <% if can? :delete, user %>
+          <%= button_to [:admin, user], class: "btn btn-delete pull-right",
+            data: {confirm: t(".confirm")}, method: :delete do %>
+            <em class="glyphicon glyphicon-trash"></em>
+          <% end %>
+        <% end %>
+        <%= button_to edit_admin_user_path(user),
+          class: "btn btn-edit pull-right", method: "get" do %>
+          <em class="glyphicon glyphicon-edit"></em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
