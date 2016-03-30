@@ -7,7 +7,7 @@
     <hr>
     <ul class="nav nav-stacked">
       <ul class="nav nav-stacked collapse in" id="userMenu">
-        <li class="active">
+        <li class = <%= "active" if current_page? users_path %> >
           <%= link_to users_path do %>
             <i class="glyphicon glyphicon-user"></i>
             <%= t ".all_users" %>
@@ -18,10 +18,18 @@
     <hr>
   <% end %>
   <ul class="nav nav-stacked">
-    <li> <%= link_to t(".home"), root_path, {title: "Home"} %> </li>
-    <li> <%= link_to t(".about"), about_path %> </li>
-    <li> <%= link_to t(".help"), help_path %> </li>
-    <li> <%= link_to t(".contact"), contact_path %> </li>
+    <li class = <%= "active" if current_page? root_path %> >
+      <%= link_to t(".home"), root_path, {title: "Home"} %>
+    </li>
+    <li class = <%= "active" if current_page? about_path %> >
+      <%= link_to t(".about"), about_path %>
+    </li>
+    <li class = <%= "active" if current_page? help_path %> >
+      <%= link_to t(".help"), help_path %>
+    </li>
+    <li class = <%= "active" if current_page? contact_path %> >
+      <%= link_to t(".contact"), contact_path %>
+    </li>
   </ul>
   <hr>
 </div>
