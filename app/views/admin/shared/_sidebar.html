@@ -1,0 +1,20 @@
+<div class="col-sm-3">
+  <% if user_signed_in? %>
+    <%= link_to "#" do %>
+      <strong><i class="glyphicon glyphicon-list">
+      </i> <%= t ".menu"%> </strong>
+    <% end %>
+    <hr>
+    <ul class="nav nav-stacked">
+      <ul class="nav nav-stacked collapse in" id="userMenu">
+        <li class = <%= "active" if current_page? admin_users_path %> >
+          <%= link_to admin_users_path do %>
+            <i class="glyphicon glyphicon-user"></i>
+            <%= t ".all_users" %>
+          <% end %>
+        </li>
+      </ul>
+    </ul>
+    <hr>
+  <% end %>
+</div>
