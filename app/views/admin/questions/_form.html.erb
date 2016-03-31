@@ -1,0 +1,32 @@
+<%= form_for([:admin, @question], html: {multipart: true}) do |f| %>
+  <%= render "shared/error", object: f.object %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: "form-control", autofocus: true %>
+  </div>
+  <div class = "form-group">
+    <%= f.label :category %>
+    <%= f.select(:category_id, @categories.collect {|p| [ p.name, p.id ] },
+    {prompt: true}, class: "form-control") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :question_type %>
+    <%= f.collection_select(:question_type, Question::QUESTION_TYPE, :to_s,
+      lambda{|i| i.to_s.humanize}, {prompt: true}, {
+      selected: f.object.question_type, class: "form-control",
+      onchange: "remove_options(this.value);"}) %>
+  </div>
+  <%= label_tag t ".option" %>
+  <%= f.fields_for :options do |builder| %>
+    <%= render "option_fields", f: builder %>
+  <% end %>
+  <div class = "form-group" align = "right">
+    <div class = "added-option"></div>
+    <%= link_to_add_fields t(".add"), f, :options,
+      "btn btn-primary add-remove-option add-button",  t(".option") %>
+  </div>
+  <hr/>
+  <div class="form-group actions">
+    <%= f.submit t(".save"), class: "btn btn-primary" %>
+  </div>
+<% end %>

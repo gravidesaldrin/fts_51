@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root "static_pages#home"
     resources :users
     resources :categories
+    resources :questions
   end
 
   resources :users, only: [:show, :index]

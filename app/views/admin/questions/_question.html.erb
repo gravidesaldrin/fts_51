@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-body panel-item">
+    <div class="row">
+      <%= link_to [:admin, question] do %>
+      <div class="col-md-2 text-center">
+        <%= image_tag(question.category.image_url.nil? ?
+          image_url("no_image.png") : question.category.image_url(:thumb),
+          size: "70x70", class: "img-square avatar avatar-original") %>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="only-bottom-margin"><%= question.content %></h3>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="col-md-2 text-right">
+        <% if can? :delete, question %>
+          <%= button_to [:admin, question], class: "btn btn-delete pull-right",
+            data: {confirm: t(".confirm")}, method: :delete do %>
+            <em class="glyphicon glyphicon-trash"></em>
+          <% end %>
+        <% end %>
+        <%= button_to edit_admin_question_path(question),
+          class: "btn btn-edit pull-right", method: "get" do %>
+          <em class="glyphicon glyphicon-edit"></em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
