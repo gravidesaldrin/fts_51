@@ -1,0 +1,13 @@
+<h2> <%= f.object.question.content %> </h2>
+<div class = "form-group">
+  <% f.object.question.options.each do |attribute| %>
+    <% if f.object.question.text? %>
+      <%= f.label "answer" %>
+      <%= f.text_field :text_answer %>
+    <% else %>
+      <%= f.label :option_id, attribute.content, value: attribute.id  %>
+      <%= f.radio_button :option_id, attribute.id %>
+    <% end %>
+    <%= f.hidden_field :question_id, value: f.object.question.id %>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<%= form_for (@exam) do |f| %>
+  <%= f.hidden_field :category_id, value: category.id %>
+  <%= f.hidden_field :correct, value: 0 %>
+  <%= f.hidden_field :total, value: Category::TOTAL_ITEM_PER_EXAM %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit t(".save"), class: "btn btn-primary" %>
+<% end %>

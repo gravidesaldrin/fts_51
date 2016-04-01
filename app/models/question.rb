@@ -5,6 +5,9 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :options
 
+  scope :correct, -> (user) {joins(answers: [:exam,:option]).
+   where("exams.user_id = ? and options.correct = ?", user, true)}
+
   accepts_nested_attributes_for :options, allow_destroy: true
 
   validate :number_of_options
@@ -12,6 +15,10 @@ class Question < ActiveRecord::Base
   validates :content, presence: true
   validates :question_type, presence: true
   validates :category_id, presence: true
+
+  def text?
+    self.question_type == "text"
+  end
 
   private
   def number_of_options
