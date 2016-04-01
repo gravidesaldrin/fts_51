@@ -19,11 +19,40 @@ en:
         title: "Update Category"
       form:
         save: "Save"
-        remove_avatar: "Remove Avatar"
+        remove_avatar: "Remove Image"
       profile:
         title: "Category"
         update: "Update"
         created: "Created:"
+    questions:
+      create:
+        success: "Question successfully created"
+      update:
+        success: "Question successfully updated"
+      destroy:
+        success: "Question successfully deleted"
+      index:
+        title: "Questions"
+        add: "Add Question"
+      question:
+        confirm: "Are you sure?"
+      new:
+        title: "New Question"
+      edit:
+        title: "Update Question"
+      form:
+        save: "Save"
+        option: "Option"
+        add: "Add"
+      profile:
+        title: "Question"
+        update: "Update"
+        created: "Created:"
+        type: "Question Type:"
+        category: "Category"
+      option_fields:
+        content: "Content"
+        remove: "Remove"
     shared:
       navbar:
         log_in: "Log In"
@@ -33,6 +62,7 @@ en:
         change_password: "Change Password"
         home: "Home"
         categories: "Categories"
+        questions: "Questions"
       sidebar:
         all_users: "All Users"
     users:
@@ -59,6 +89,31 @@ en:
         success: "User successfully created"
       update:
         success: "User successfully updated"
+  answers:
+    index:
+      title: "Result"
+      result: "Result :"
+      question: "Question"
+      answer: "Answer"
+      correct: "Correct"
+    answer:
+      no_answer: "No Answer"
+  categories:
+    index:
+      title: "Categories"
+    category:
+      save: "Start Exam"
+      continue: "Continue Exam"
+    start_exam:
+      save: "Start Exam"
+  exams:
+    create:
+      warning: "You have encountered an error."
+    edit:
+      finish: "Finish Exam"
+      total_item: "Total Item"
+    index:
+      title: "Results"
   shared:
     navbar:
       log_in: "Log In"
@@ -68,6 +123,8 @@ en:
       change_password: "Change Password"
     sidebar:
       all_users: "All Users"
+      categories: "Start Exam"
+      results: "View Results"
   static_pages:
     about:
       title: "About"

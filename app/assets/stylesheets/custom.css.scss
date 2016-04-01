@@ -31,7 +31,7 @@ a {
 
 a:hover,
 a:focus {
-  color: green;
+  color: #DA0909;
   text-decoration: underline;
 }
 
@@ -158,6 +158,34 @@ a:focus {
 }
 
 .user_profile {
-  color: #F70A0A !important;
+  color: #F70A0A;
 }
 
+.user-show:hover{
+  background-color: #F51313 !important;
+}
+
+li.active {
+  background-color: #F51313 !important;
+  a {
+  color: #fff !important;
+  }
+}
+
+.lead {
+  margin-bottom: 0px;
+}
+
+button.btn-edit {
+  background-color: #32B931;
+  color: white;
+}
+
+button.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+.panel-item{
+  background-color: #F7F7F7 !important;
+}

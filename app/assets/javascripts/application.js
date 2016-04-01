@@ -19,3 +19,14 @@
 $('[data-toggle=collapse]').click(function(){
   $(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
 });
+
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g");
+  $(link).parent().before(content.replace(regexp, new_id));
+}

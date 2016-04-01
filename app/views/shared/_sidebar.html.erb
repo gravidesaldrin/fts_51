@@ -13,6 +13,18 @@
             <%= t ".all_users" %>
           <% end %>
         </li>
+        <li class = <%= "active" if current_page? categories_path %> >
+          <%= link_to categories_path do %>
+            <i class="glyphicon glyphicon-ok"></i>
+            <%= t ".categories" %>
+          <% end %>
+        </li>
+        <li class = <%= "active" if current_page? exams_path %> >
+          <%= link_to exams_path do %>
+            <i class="glyphicon glyphicon-signal"></i>
+            <%= t ".results" %>
+          <% end %>
+        </li>
       </ul>
     </ul>
     <hr>
