@@ -1,12 +1,19 @@
 class Question < ActiveRecord::Base
   QUESTION_TYPE = %w[single multiple text]
+  paginates_per 10
 
   belongs_to :category
   has_many :answers
   has_many :options
 
   scope :correct, -> (user) {joins(answers: [:exam,:option]).
-   where("exams.user_id = ? and options.correct = ?", user, true)}
+   where("questions.question_type != ? and exams.user_id = ? and
+   options.correct = ?", "text", user, true)}
+
+  scope :correct_text, -> (user) {joins(:options, answers: [:exam]).
+   where("questions.question_type = ? and exams.user_id = ? and
+   answers.text_answer = options.content and options.correct = ?",
+   "text", user, true)}
 
   accepts_nested_attributes_for :options, allow_destroy: true
 
@@ -18,6 +25,24 @@ class Question < ActiveRecord::Base
 
   def text?
     self.question_type == "text"
+  end
+
+  def correct_content
+    self.options.select{|attribute| attribute.correct}
+      .map{|attribute| attribute.content}.join(", ")
+  end
+
+  class << self
+    def search category, current_filter, current_user
+      case current_filter
+      when "learned"
+        category.questions.correct(current_user) + category.questions.correct_text(current_user)
+      when "unlearned"
+        current_user.unlearned_question category
+      else
+        category.questions
+      end
+    end
   end
 
   private

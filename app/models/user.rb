@@ -31,6 +31,6 @@ class User < ActiveRecord::Base
 
   def unlearned_question current_category
     current_category.questions.reject{|attribute|
-    Question.correct(self).include? attribute}
+    (Question.correct(self) + Question.correct_text(self)).include? attribute}
   end
 end

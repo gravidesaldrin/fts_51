@@ -114,6 +114,13 @@ en:
       total_item: "Total Item"
     index:
       title: "Results"
+  questions:
+    index:
+      title: "Questions"
+      filter: "Filter"
+      category: "Category"
+      question: "Question"
+      content: "Answer"
   shared:
     navbar:
       log_in: "Log In"
@@ -125,6 +132,7 @@ en:
       all_users: "All Users"
       categories: "Start Exam"
       results: "View Results"
+      questions: "Questions"
   static_pages:
     about:
       title: "About"
