@@ -1,0 +1,30 @@
+<% provide :title, t(".title") %>
+<div class="panel panel-default panel-table">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col col-xs-6">
+        <h3 class="panel-title"><%= @exam.category.name %></h3>
+      </div>
+      <div class="col col-xs-6 text-right">
+        <%= t ".result" %> <%= @exam.final_result %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered table-list">
+      <thead>
+        <tr>
+          <th><%= t ".question" %></th>
+          <th><%= t ".answer" %></th>
+          <th><%= t ".correct" %></th>
+        </tr>
+      </thead>
+      <tbody class="answers">
+        <%= render @answers %>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <%= paginate @answers %>
+  </div>
+</div>

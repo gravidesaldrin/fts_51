@@ -1,0 +1,16 @@
+<tr>
+  <% if answer.question.text? %>
+    <td align="center"><%= answer.question.content %></td>
+    <td><%= answer.text_answer %></td>
+    <td><%= answer.question.options.select{|attribute| attribute.content == answer.text_answer}.any? %></td>
+  <% else %>
+    <td align="center"><%= answer.question.content %></td>
+    <% if answer.option.nil? %>
+      <td><%= t ".no_answer" %></td>
+      <td> </td>
+    <% else %>
+      <td><%= answer.option.content %></td>
+      <td><%= answer.option.correct?  %></td>
+    <% end %>
+  <% end %>
+</tr>

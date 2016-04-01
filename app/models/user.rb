@@ -25,4 +25,12 @@ class User < ActiveRecord::Base
     self.role == "Admin"
   end
 
+  def current_exam
+    exams.find_by finished_time: nil
+  end
+
+  def unlearned_question current_category
+    current_category.questions.reject{|attribute|
+    Question.correct(self).include? attribute}
+  end
 end

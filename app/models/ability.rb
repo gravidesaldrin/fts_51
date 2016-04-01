@@ -10,6 +10,10 @@ class Ability
    else
      can :read, User
      can :edit, User, id: user.id
+     can :read, Category
+     can :manage, Exam
+     cannot :delete, Exam
+     can :read, Answer
    end
   end
 end

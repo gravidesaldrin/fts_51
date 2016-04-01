@@ -1,0 +1,13 @@
+<%= form_for @exam, html: {multipart: true,
+  class: "margin-bottom-40"} do |f| %>
+  <div class = "edit_lesson">
+    <%= f.fields_for :answers do |builder| %>
+      <%= render "exams/answer_fields", f: builder %>
+    <% end %>
+    <hr/>
+  </div>
+  <%= f.hidden_field :id , value: @exam.id %>
+  <%= f.submit t(".finish"), class: "btn btn-primary" %>
+<% end %>
+<br/>
+<%= t ".total_item" %>: <%= @limit %>
