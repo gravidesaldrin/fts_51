@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class = "user_index">
+      <div class="row">
+        <div class="col-md-11 lead"><%= t ".title" %></div>
+      </div>
+      <hr/>
+      <%= render @exams %>
+      <div class="col-md-11">
+        <%= paginate @exams %>
+      </div>
+    </div>
+  </div>
+</div>

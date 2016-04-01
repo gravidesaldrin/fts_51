@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-body panel-item">
+    <div class="row">
+      <%= link_to answers_path id: exam.id do %>
+        <div class="col-md-2 text-center">
+          <%= image_tag(exam.category.image_url.nil? ?
+            image_url("no_image.png") : exam.category.image_url(:thumb),
+            size: "70x70", class: "img-square avatar avatar-original") %>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="only-bottom-margin"><%= exam.category.name %></h3>
+            </div>
+            <div class="col-md-12">
+              <span class="text-muted"><%= t ".finished_time" %></span>
+                <%= exam.finished_time %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-md-2 text-right">
+        <h3> <%= exam.final_result %> </h3>
+      </div>
+    </div>
+  </div>
+</div>

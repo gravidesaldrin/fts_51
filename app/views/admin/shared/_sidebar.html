@@ -19,6 +19,12 @@
             <%= t ".categories" %>
           <% end %>
         </li>
+        <li class = <%= "active" if current_page? admin_questions_path %> >
+          <%= link_to admin_questions_path do %>
+            <i class="glyphicon glyphicon-font"></i>
+            <%= t ".questions" %>
+          <% end %>
+        </li>
       </ul>
     </ul>
     <hr>

@@ -1,7 +1,9 @@
 class ExamsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
-
+  def index
+    @exams = @exams.page params[:page]
+  end
   def create
     @exam = Exam.new exam_params
     if @exam.save
