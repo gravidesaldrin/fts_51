@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  resources :users, only: [:show, :index]
   devise_for :users, path: "",
     path_names: {sign_in: "login", sign_out: "logout"}
+  resources :users, only: [:show, :index]
   resources :categories, only: [:index]
   resources :exams, except: [:destroy]
   resources :answers, only: [:index]
+  resources :questions, only: [:index]
 end

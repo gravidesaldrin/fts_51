@@ -25,6 +25,12 @@
             <%= t ".results" %>
           <% end %>
         </li>
+        <li class = <%= "active" if current_page? questions_path %> >
+          <%= link_to questions_path do %>
+            <i class="glyphicon glyphicon-search"></i>
+            <%= t ".questions" %>
+          <% end %>
+        </li>
       </ul>
     </ul>
     <hr>

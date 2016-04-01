@@ -14,6 +14,7 @@ class Ability
      can :manage, Exam
      cannot :delete, Exam
      can :read, Answer
+     can :read, Question
    end
   end
 end
