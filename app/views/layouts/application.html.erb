@@ -12,7 +12,11 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <%= render "shared/sidebar" %>
+          <% if for_user_path? controller_name, action_name, params[:active] %>
+            <%= render "shared/sidebar_user" %>
+          <% else %>
+            <%= render "shared/sidebar" %>
+          <% end %>
         <div class="col-sm-9">
           <%= render "shared/flash" %>
           <%= yield %>
