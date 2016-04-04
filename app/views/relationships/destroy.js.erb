@@ -1,0 +1,2 @@
+<% @user = @recent_user %>
+$(".follow_form_<%= @followed.id %>").html("<%= escape_javascript render "users/follow" %>");

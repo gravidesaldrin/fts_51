@@ -25,4 +25,14 @@ module ApplicationHelper
       id: "add-button", remote: true
   end
 
+  def for_user_path? controller, action, active = ""
+    case controller
+    when "users"
+      action == "show" and active.blank?
+    when "relationships"
+      action == "index" and !active.blank?
+    else
+      false
+    end
+  end
 end

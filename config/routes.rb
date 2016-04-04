@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :exams, except: [:destroy]
   resources :answers, only: [:index]
   resources :questions, only: [:index]
+  resources :relationships, only: [:index, :create, :destroy]
 end

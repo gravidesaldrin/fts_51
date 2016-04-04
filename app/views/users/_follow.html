@@ -1,0 +1,7 @@
+<% user ||= @user %>
+<%= form_for (current_user.active_relationships.build), remote: true do |f| %>
+  <div><%= hidden_field_tag :followed_id, user.id %></div>
+  <%= hidden_field_tag :active, params[:active] %>
+  <%= hidden_field_tag :recent_user, @user.id %>
+  <%= f.submit t(".save"), class: "btn btn-primary" %>
+<% end %>
