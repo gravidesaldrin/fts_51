@@ -22,6 +22,7 @@ class ExamsController < ApplicationController
 
   def update
     if @exam.update_attributes exam_params
+      ExamResultsWorker.perform_async @exam.id
       redirect_to answers_path id: @exam.id
     else
       render :edit
