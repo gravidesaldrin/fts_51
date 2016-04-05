@@ -27,4 +27,13 @@ class Notifier < ActionMailer::Base
       sent_on: Time.now
     )
   end
+
+  def send_statistics user
+    @user = user
+    mail(
+      to: @user.email,
+      subject: t(".statistics"),
+      sent_on: Time.now
+    )
+  end
 end

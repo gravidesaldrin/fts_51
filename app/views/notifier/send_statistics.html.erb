@@ -1,0 +1,7 @@
+<p><%= t ".greeting" %> <%= @user.name %>,</p>
+<p><%= t ".message" %> </p>
+<% @user.statistic.each do |exam| %>
+  <p> <b> <%= exam.category.name %> </b> : <%= exam.final_result %> </p>
+<% end %>
+<p><%= t ".from" %></p>
+<p><%= t ".team" %></p>

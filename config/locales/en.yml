@@ -108,6 +108,12 @@ en:
       from: "Regards,"
       team: "FTS Team"
       exam_result: "Exam Result"
+    send_statistics:
+      greeting: "Hi"
+      message: "Your status for this month is:"
+      from: "Regards,"
+      team: "FTS Team"
+      statistics: "FTS - Statistics"
   relationships:
     index:
       title: "Relationships"
