@@ -18,4 +18,13 @@ class Notifier < ActionMailer::Base
       sent_on: Time.now
     )
   end
+
+  def exam_result exam
+    @exam = Exam.find exam
+    mail(
+      to: @exam.user.email,
+      subject: t(".exam_result"),
+      sent_on: Time.now
+    )
+  end
 end

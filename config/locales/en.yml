@@ -101,7 +101,13 @@ en:
       message: "Your exam is already expired"
       from: "Regards,"
       team: "FTS Team"
-      new_category: "New Category"
+      expired_exam: "Exam Expired"
+    exam_result:
+      greeting: "Hi"
+      message: "Your exam result for:"
+      from: "Regards,"
+      team: "FTS Team"
+      exam_result: "Exam Result"
   relationships:
     index:
       title: "Relationships"
