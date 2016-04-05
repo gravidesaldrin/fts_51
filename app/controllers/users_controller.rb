@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = @users.order(:name).page params[:page]
+    @users = @users.normal.order(:name).page params[:page]
   end
 end

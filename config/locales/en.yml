@@ -89,6 +89,15 @@ en:
         success: "User successfully created"
       update:
         success: "User successfully updated"
+  notifier:
+    new_category:
+      greeting: "Hi"
+      message: "We created a new Category."
+      from: "Regards,"
+      team: "FTS Team"
+  relationships:
+    index:
+      title: "Relationships"
   answers:
     index:
       title: "Result"
@@ -133,6 +142,11 @@ en:
       categories: "Start Exam"
       results: "View Results"
       questions: "Questions"
+    sidebar_user:
+      profile: "Profile"
+      activities: "Activities"
+      followers: "Followers"
+      following: "Following"
   static_pages:
     about:
       title: "About"
@@ -143,6 +157,10 @@ en:
     home:
       title: "Framgia Test System"
   users:
+    follow:
+      save: "Follow"
+    unfollow:
+      save: "Unfollow"
     confirmations:
       new:
         title: "Resend confirmation instructions"

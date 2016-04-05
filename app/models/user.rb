@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :confirmable
   mount_uploader :avatar, AvatarUploader
 
+  scope :normal, -> {where role: "Normal"}
+
   def admin?
     self.role == "Admin"
   end

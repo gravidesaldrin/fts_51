@@ -4,4 +4,4 @@ require "carrierwave/orm/activerecord"
 
 # Initialize the Rails application.
 Rails.application.initialize!
-require 'carrierwave/orm/activerecord'
+require "carrierwave/orm/activerecord"
