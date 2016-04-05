@@ -95,6 +95,13 @@ en:
       message: "We created a new Category."
       from: "Regards,"
       team: "FTS Team"
+      new_category: "New Category"
+    expired_exam:
+      greeting: "Hi"
+      message: "Your exam is already expired"
+      from: "Regards,"
+      team: "FTS Team"
+      new_category: "New Category"
   relationships:
     index:
       title: "Relationships"
