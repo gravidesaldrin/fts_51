@@ -47,4 +47,15 @@ class User < ActiveRecord::Base
     current_category.questions.reject{|attribute|
     (Question.correct(self) + Question.correct_text(self)).include? attribute}
   end
+
+  def statistic
+    self.exams.where('finished_time BETWEEN ? AND ?',
+      DateTime.now.beginning_of_month, DateTime.now.end_of_month)
+  end
+
+  class << self
+    def send_statistics
+      Notify.new(self).send_statistics
+    end
+  end
 end

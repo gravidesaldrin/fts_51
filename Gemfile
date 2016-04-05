@@ -21,6 +21,7 @@ gem "mailcatcher"
 gem "cancancan", "~> 1.10"
 gem "delayed_job_active_record"
 gem "sidekiq"
+gem "whenever"
 
 group :development, :test do
   gem "sqlite3", "1.3.9"

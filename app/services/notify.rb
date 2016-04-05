@@ -1,5 +1,5 @@
 class Notify
-  def initialize params
+  def initialize params = []
     @resource = params
   end
 
@@ -15,4 +15,12 @@ class Notify
   end
   handle_asynchronously :notify_exam_expired,
     run_at: Proc.new {8.hours.from_now}
+
+  def send_statistics
+    @user = User.normal
+    @user.each do |user|
+      Notifier.send_statistics(user).deliver
+    end
+  end
+  handle_asynchronously :send_statistics
 end
