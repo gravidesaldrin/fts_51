@@ -7,6 +7,7 @@ class ExamsController < ApplicationController
   def create
     @exam = Exam.new exam_params
     if @exam.save
+      Notify.new(@exam).notify_exam_expired
       redirect_to edit_exam_path current_user.current_exam
     else
       flash.now[:warning] = t ".warning"

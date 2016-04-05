@@ -9,7 +9,7 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      Notify.new(@category.name).notify_users
+      Notify.new(@category.name).notify_new_category
       flash[:success] = t ".success"
       redirect_to admin_categories_path
     else

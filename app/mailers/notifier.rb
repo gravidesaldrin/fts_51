@@ -5,7 +5,16 @@ class Notifier < ActionMailer::Base
     @category = category
     mail(
       to: user.email,
-      subject: "New Category",
+      subject: t(".new_category"),
+      sent_on: Time.now
+    )
+  end
+
+  def expired_exam exam
+    @exam = Exam.find exam
+    mail(
+      to: @exam.user.email,
+      subject: t(".expired_exam"),
       sent_on: Time.now
     )
   end
