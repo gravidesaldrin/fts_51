@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class = "user_index">
+      <div class="row">
+        <div class="col-md-11 lead"><%= t ".title" %></div>
+      </div>
+      <hr/>
+      <ul class="list-group">
+        <% @activities.each do |activity| %>
+        <li class="list-group-item">
+          <span class="content">
+            <% if current_user == activity.user %>
+              <%= t ".you" %>
+            <% else %>
+              <% if @user == activity.user %>
+                <%= activity.user.name %>
+              <% else %>
+                <%= link_to activity.user.name, activity.user %>
+               <% end %>
+            <% end %>
+            <%= activity.message %>
+          </span>
+          <span class="timestamp">
+            <%= time_ago_in_words activity.created_at %> ago.
+          </span>
+        </li>
+        <% end %>
+      </ul>
+      <div class="col-md-11">
+        <%= paginate @activities %>
+      </div>
+   </div>
+  </div>
+</div>

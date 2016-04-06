@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :answers, only: [:index]
   resources :questions, only: [:index]
   resources :relationships, only: [:index, :create, :destroy]
+  resources :activities, only: [:index]
 end

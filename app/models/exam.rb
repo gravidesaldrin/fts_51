@@ -4,6 +4,7 @@ class Exam < ActiveRecord::Base
   has_many :answers
 
   after_create :create_items
+  after_update :create_activity
   before_update :finish_exam
   scope :finished , -> {where "finished_time IS NOT NULL"}
 
@@ -36,5 +37,10 @@ class Exam < ActiveRecord::Base
       att.content == attribute.text_answer}.any?}.count
     self.total = self.answers.size
     self.finished_time = Time.now
+  end
+  def create_activity
+    Activity.create user_id: self.user_id, message:
+      "Learned #{self.correct} question(s) in Exam '#{self.category.name}' -
+      #{self.finished_time.strftime("(%m/%d/%Y)")}", action: "Learned"
   end
 end

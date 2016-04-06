@@ -14,8 +14,8 @@
             <%= t ".profile" %>
           <% end %>
         </li>
-        <li class = <%= "active" if current_page? categories_path %> >
-          <%= link_to categories_path do %>
+        <li class = <%= "active" if current_page? activities_path %> >
+          <%= link_to activities_path id: @user.id do %>
             <i class="glyphicon glyphicon-ok"></i>
             <%= t ".activities" %>
           <% end %>

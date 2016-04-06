@@ -4,7 +4,8 @@
   <div class="panel-body">
     <div class = "user_index">
       <div class="row">
-        <div class="col-md-11 lead"><%= t ".title" %></div>
+        <div class="col-md-11 lead"><%= params[:active] == "followers" ?
+  t(".followers") : t(".following") %></div>
       </div>
       <hr/>
       <div id = "<%= params[:active] == "followers" ? "followers" :
