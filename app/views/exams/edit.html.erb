@@ -7,7 +7,16 @@
     <hr/>
   </div>
   <%= f.hidden_field :id , value: @exam.id %>
-  <%= f.submit t(".finish"), class: "btn btn-primary" %>
+  <%= f.hidden_field :cancelled_time %>
+  <%= f.submit t(".finish"), class: "btn btn-primary", id: "commit" %>
 <% end %>
 <br/>
 <%= t ".total_item" %>: <%= @limit %>
+<%= hidden_field_tag :time_now, @exam.created_at + 20.seconds %>
+<div id="clockdiv" data-path="<%= root_path %>">
+  <div>
+    <%= t ".remaining_time" %>:
+    <span class="minutes"></span>:
+    <span class="seconds"></span>
+  </div>
+</div>
