@@ -1,0 +1,22 @@
+user1:
+  id: 1
+  name: "Aldrin Gravides"
+  email: "gravides.dren@gmail.com"
+  role: "Admin"
+user2:
+  id: 2
+  name: "Christian Galamay"
+  email: "chrono4204@gmail.com"
+  role: "Normal"
+user3:
+  id: 4
+  name: "Karl Pandacan"
+  email: "karl_pandacan@gmail.com"
+  role: "Normal"
+
+# invalid user2
+
+xuser1:
+  id: 3
+  name: "Grace Sojor"
+  email: "codegracie sojor@gmail.com"
