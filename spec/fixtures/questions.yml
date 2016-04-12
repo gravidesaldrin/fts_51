@@ -1,0 +1,20 @@
+question1:
+  id: 1
+  category_id: 1
+  content: "What is the tagalog of Apple ?"
+  question_type: "single"
+question2:
+  id: 2
+  category_id: 1
+  content: "What is the tagalog of Banana ?"
+  question_type: "single"
+question3:
+  id: 3
+  category_id: 1
+  content: "What is the tagalog of Watermelon ?"
+  question_type: "multiple"
+question4:
+  id: 4
+  category_id: 2
+  content: "Object with Rows and Columns ?"
+  question_type: "text"
