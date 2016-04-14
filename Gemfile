@@ -28,9 +28,13 @@ group :development, :test do
   gem "pry"
   gem "web-console", "2.0.0.beta3"
   gem "spring", "1.1.3"
+  gem "rspec"
+  gem "rspec-rails", "~> 3.0"
 end
 
 group :test do
+  gem "simplecov"
+  gem "shoulda-matchers", "~> 3.1"
   gem "minitest-reporters", "1.0.5"
   gem "mini_backtrace", "0.1.3"
   gem "guard-minitest", "2.3.1"

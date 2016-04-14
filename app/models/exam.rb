@@ -8,9 +8,12 @@ class Exam < ActiveRecord::Base
   before_update :finish_exam
 
   scope :finished , -> {where "finished_time IS NOT NULL and
-    cancelled_time IS NOT NULL"}
+    cancelled_time IS NULL"}
 
   accepts_nested_attributes_for :answers, allow_destroy: true
+
+  validates :category_id,  presence: true, allow_blank: false
+  validates :user_id,  presence: true, allow_blank: false
 
   def final_result
     "#{self.correct}/#{self.total}"
