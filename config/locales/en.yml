@@ -89,6 +89,9 @@ en:
         success: "User successfully created"
       update:
         success: "User successfully updated"
+  activities:
+    index:
+      title: "Activities"
   notifier:
     new_category:
       greeting: "Hi"
@@ -116,7 +119,8 @@ en:
       statistics: "FTS - Statistics"
   relationships:
     index:
-      title: "Relationships"
+      followers: "Followers"
+      following: "Following"
   answers:
     index:
       title: "Result"

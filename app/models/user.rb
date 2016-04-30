@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   paginates_per 10
   has_many :exams
+  has_many :activities
   has_many :active_relationships,  class_name: Relationship.name,
     foreign_key: :follower_id,
     dependent: :destroy
