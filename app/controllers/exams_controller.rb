@@ -2,7 +2,7 @@ class ExamsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
   def index
-    @exams = @exams.page params[:page]
+    @exams = @exams.finished.page params[:page]
   end
   def create
     @exam = Exam.new exam_params
@@ -32,6 +32,7 @@ class ExamsController < ApplicationController
   private
   def exam_params
     params.require(:exam).permit :id, :category_id, :user_id, :correct, :total,
-      answers_attributes: [:id, :question_id, :option_id, :text_answer]
+      :cancelled_time, answers_attributes: [:id, :question_id, :option_id,
+      :text_answer]
   end
 end

@@ -1,0 +1,42 @@
+$(function(){
+  var deadline = document.getElementById("time_now").value;
+  var path = $("#clockdiv").data("path");
+  initializeClock("clockdiv", deadline);
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var minutesSpan = clock.querySelector(".minutes");
+    var secondsSpan = clock.querySelector(".seconds");
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+      minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+        if (confirm("Finish the Lesson?")) {
+          document.getElementById("exam_cancelled_time").value = "";
+        }
+        else{
+          document.getElementById("exam_cancelled_time").value =
+            "<%= Time.now %>";
+        }
+        document.getElementById("commit").click();
+      }
+    }
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+});
+
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  return {
+    "total": t,
+    "minutes": minutes,
+    "seconds": seconds
+  };
+}

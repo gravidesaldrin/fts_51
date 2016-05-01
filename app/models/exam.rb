@@ -6,7 +6,9 @@ class Exam < ActiveRecord::Base
   after_create :create_items
   after_update :create_activity
   before_update :finish_exam
-  scope :finished , -> {where "finished_time IS NOT NULL"}
+
+  scope :finished , -> {where "finished_time IS NOT NULL and
+    cancelled_time IS NOT NULL"}
 
   accepts_nested_attributes_for :answers, allow_destroy: true
 

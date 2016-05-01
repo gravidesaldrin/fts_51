@@ -128,6 +128,7 @@ en:
       question: "Question"
       answer: "Answer"
       correct: "Correct"
+      cancelled: "Cancelled"
     answer:
       no_answer: "No Answer"
   categories:
@@ -144,6 +145,7 @@ en:
     edit:
       finish: "Finish Exam"
       total_item: "Total Item"
+      remaining_time: "Remaining Time"
     index:
       title: "Results"
   questions:

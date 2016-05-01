@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def statistic
-    self.exams.where('finished_time BETWEEN ? AND ?',
+    self.exams.finished.where("finished_time BETWEEN ? AND ?",
       DateTime.now.beginning_of_month, DateTime.now.end_of_month)
   end
 
